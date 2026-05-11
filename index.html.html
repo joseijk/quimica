@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad: metales, no metales y gases nobles</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #34495e;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+        .identificacion {
+            background-color: #e8f4f8;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border-left: 4px solid #3498db;
+        }
+        .identificacion input {
+            padding: 10px;
+            font-size: 16px;
+            width: 100%;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-top: 5px;
+        }
+        .question-group {
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            border-left: 4px solid #bdc3c7;
+        }
+        .question-text {
+            flex: 1;
+            padding-right: 15px;
+        }
+        select {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+            outline: none;
+            min-width: 150px;
+        }
+        button {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            margin-top: 30px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        button:disabled {
+            background-color: #95a5a6;
+            cursor: not-allowed;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            text-align: center;
+            font-size: 18px;
+            display: none;
+        }
+        .correct { border-left-color: #2ecc71 !important; background-color: #e8f8f5; }
+        .incorrect { border-left-color: #e74c3c !important; background-color: #fdedec; }
+        .radio-option {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-radius: 5px;
+            border-left: 4px solid #bdc3c7;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Clasificación de los elementos químicos</h1>
+    
+    <div class="identificacion">
+        <label for="nombre-alumno"><strong>Ingresá tu nombre y apellido:</strong></label>
+        <input type="text" id="nombre-alumno" placeholder="Ej: Ana Pérez" required>
+    </div>
+
+    <p>Completá las siguientes actividades. Al finalizar, hacé clic en "Corregir actividad" para ver tu puntaje y enviar tus resultados al docente.</p>
+
+    <!-- Parte 1 -->
+    <h2>1. Características generales</h2>
+    
+    <div class="question-group" id="q1_1">
+        <div class="question-text">Buenos conductores de electricidad</div>
+        <select data-answer="metal"><option value="">Elegir...</option><option value="metal">Metales</option><option value="nometal">No metales</option><option value="gasnoble">Gases nobles</option></select>
+    </div>
+    <div class="question-group" id="q1_2">
+        <div class="question-text">No reactivos químicamente</div>
+        <select data-answer="gasnoble"><option value="">Elegir...</option><option value="metal">Metales</option><option value="nometal">No metales</option><option value="gasnoble">Gases nobles</option></select>
+    </div>
+    <div class="question-group" id="q1_3">
+        <div class="question-text">Generalmente frágiles cuando son sólidos</div>
+        <select data-answer="nometal"><option value="">Elegir...</option><option value="metal">Metales</option><option value="nometal">No metales</option><option value="gasnoble">Gases nobles</option></select>
+    </div>
+    <div class="question-group" id="q1_4">
+        <div class="question-text">Presentan brillo metálico</div>
+        <select data-answer="metal"><option value="">Elegir...</option><option value="metal">Metales</option><option value="nometal">No metales</option><option value="gasnoble">Gases nobles</option></select>
+    </div>
+    <div class="question-group" id="q1_5">
+        <div class="question-text">Pueden presentarse como sólidos, líquidos o gases a temperatura ambiente</div>
+        <select data-answer="nometal"><option value="">Elegir...</option><option value="metal">Metales</option><option value="nometal">No metales</option><option value="gasnoble">Gases nobles</option></select>
+    </div>
+    <div class="question-group" id="q1_6">
+        <div class="question-text">Son maleables y dúctiles</div>
+        <select data-answer="metal"><option value="">Elegir...</option><option value="metal">Metales</option><option value="nometal">No metales</option><option value="gasnoble">Gases nobles</option></select>
+    </div>
+    <div class="question-group" id="q1_7">
+        <div class="question-text">Se ubican en el grupo 18 de la tabla periódica</div>
+        <select data-answer="gasnoble"><option value="">Elegir...</option><option value="metal">Metales</option><option value="nometal">No metales</option><option value="gasnoble">Gases nobles</option></select>
+    </div>
+
+    <!-- Parte 2 -->
+    <h2>2. Descubrí de qué grupo se trata</h2>
+    
+    <div class="question-group" id="q2_1">
+        <div class="question-text"><strong>Elemento A:</strong> brillante, conductor, puede convertirse en láminas.</div>
+        <select data-answer="metal"><option value="">Elegir...</option><option value="metal">Metal</option><option value="nometal">No metal</option><option value="gasnoble">Gas noble</option></select>
+    </div>
+    <div class="question-group" id="q2_2">
+        <div class="question-text"><strong>Elemento B:</strong> gas incoloro, estable, casi no reacciona.</div>
+        <select data-answer="gasnoble"><option value="">Elegir...</option><option value="metal">Metal</option><option value="nometal">No metal</option><option value="gasnoble">Gas noble</option></select>
+    </div>
+    <div class="question-group" id="q2_3">
+        <div class="question-text"><strong>Elemento C:</strong> opaco, frágil, mal conductor.</div>
+        <select data-answer="nometal"><option value="">Elegir...</option><option value="metal">Metal</option><option value="nometal">No metal</option><option value="gasnoble">Gas noble</option></select>
+    </div>
+
+    <!-- Parte 3 -->
+    <h2>3. Clasificación por elemento</h2>
+    
+    <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+        <div class="question-group" style="width: 45%;" id="q3_1">
+            <div class="question-text">Hierro (Fe)</div>
+            <select data-answer="metal"><option value="">Elegir...</option><option value="metal">Metal</option><option value="nometal">No metal</option><option value="gasnoble">Gas noble</option></select>
+        </div>
+        <div class="question-group" style="width: 45%;" id="q3_2">
+            <div class="question-text">Oxígeno (O)</div>
+            <select data-answer="nometal"><option value="">Elegir...</option><option value="metal">Metal</option><option value="nometal">No metal</option><option value="gasnoble">Gas noble</option></select>
+        </div>
+        <div class="question-group" style="width: 45%;" id="q3_3">
+            <div class="question-text">Helio (He)</div>
+            <select data-answer="gasnoble"><option value="">Elegir...</option><option value="metal">Metal</option><option value="nometal">No metal</option><option value="gasnoble">Gas noble</option></select>
+        </div>
+        <div class="question-group" style="width: 45%;" id="q3_4">
+            <div class="question-text">Cobre (Cu)</div>
+            <select data-answer="metal"><option value="">Elegir...</option><option value="metal">Metal</option><option value="nometal">No metal</option><option value="gasnoble">Gas noble</option></select>
+        </div>
+        <div class="question-group" style="width: 45%;" id="q3_5">
+            <div class="question-text">Azufre (S)</div>
+            <select data-answer="nometal"><option value="">Elegir...</option><option value="metal">Metal</option><option value="nometal">No metal</option><option value="gasnoble">Gas noble</option></select>
+        </div>
+        <div class="question-group" style="width: 45%;" id="q3_6">
+            <div class="question-text">Argón (Ar)</div>
+            <select data-answer="gasnoble"><option value="">Elegir...</option><option value="metal">Metal</option><option value="nometal">No metal</option><option value="gasnoble">Gas noble</option></select>
+        </div>
+        <div class="question-group" style="width: 45%;" id="q3_7">
+            <div class="question-text">Aluminio (Al)</div>
+            <select data-answer="metal"><option value="">Elegir...</option><option value="metal">Metal</option><option value="nometal">No metal</option><option value="gasnoble">Gas noble</option></select>
+        </div>
+        <div class="question-group" style="width: 45%;" id="q3_8">
+            <div class="question-text">Carbono (C)</div>
+            <select data-answer="nometal"><option value="">Elegir...</option><option value="metal">Metal</option><option value="nometal">No metal</option><option value="gasnoble">Gas noble</option></select>
+        </div>
+        <div class="question-group" style="width: 45%;" id="q3_9">
+            <div class="question-text">Neón (Ne)</div>
+            <select data-answer="gasnoble"><option value="">Elegir...</option><option value="metal">Metal</option><option value="nometal">No metal</option><option value="gasnoble">Gas noble</option></select>
+        </div>
+        <div class="question-group" style="width: 45%;" id="q3_10">
+            <div class="question-text">Nitrógeno (N)</div>
+            <select data-answer="nometal"><option value="">Elegir...</option><option value="metal">Metal</option><option value="nometal">No metal</option><option value="gasnoble">Gas noble</option></select>
+        </div>
+    </div>
+
+    <!-- Parte 4 -->
+    <h2>4. Ubicación en la tabla periódica</h2>
+
+    <div class="radio-option" id="q4_1">
+        <p><strong>A.</strong> ¿En qué sector de la tabla periódica se ubica la gran mayoría de los metales?</p>
+        <label><input type="radio" name="ubicacion_metales" value="incorrecto"> Exclusivamente en el extremo derecho.</label><br>
+        <label><input type="radio" name="ubicacion_metales" value="correcto"> A la izquierda y en el centro (incluyendo los de transición).</label><br>
+        <label><input type="radio" name="ubicacion_metales" value="incorrecto"> Únicamente en el grupo 1 y 2.</label>
+    </div>
+
+    <div class="radio-option" id="q4_2">
+        <p><strong>B.</strong> ¿Dónde se agrupan los no metales?</p>
+        <label><input type="radio" name="ubicacion_nometales" value="correcto"> En la región superior derecha (a la derecha de la línea escalonada) y el hidrógeno.</label><br>
+        <label><input type="radio" name="ubicacion_nometales" value="incorrecto"> En el bloque d central de la tabla periódica.</label><br>
+        <label><input type="radio" name="ubicacion_nometales" value="incorrecto"> En las dos filas inferiores separadas del resto.</label>
+    </div>
+
+    <button id="btn-corregir" onclick="corregirActividad()">Corregir y enviar actividad</button>
+    
+    <div id="mensaje-resultado" class="result"></div>
+</div>
+
+<script>
+    // Tu enlace ha sido agregado aquí:
+    const URL_DEL_SCRIPT = "https://script.google.com/macros/s/AKfycbxwOC7N8gPyerGIgUEIxITOhTkEOSjUmrsLsdfR0lgdUIoJoEqZnkOONd7sQUlUDL7qSQ/exec"; 
+
+    function corregirActividad() {
+        const nombreAlumno = document.getElementById('nombre-alumno').value.trim();
+        
+        if (!nombreAlumno) {
+            alert("Por favor, ingresá tu nombre antes de corregir la actividad.");
+            document.getElementById('nombre-alumno').focus();
+            return;
+        }
+
+        // Desactivar el botón para que no hagan clic dos veces
+        const btn = document.getElementById('btn-corregir');
+        btn.disabled = true;
+        btn.innerText = "Corrigiendo y enviando datos...";
+
+        let puntaje = 0;
+        let total = 22; // 7 + 3 + 10 + 2
+
+        // Corregir selects
+        const selects = document.querySelectorAll('select');
+        selects.forEach(select => {
+            const respuestaCorrecta = select.getAttribute('data-answer');
+            const contenedor = select.parentElement;
+            if (select.value === respuestaCorrecta) {
+                puntaje++;
+                contenedor.classList.remove('incorrect');
+                contenedor.classList.add('correct');
+            } else {
+                contenedor.classList.remove('correct');
+                contenedor.classList.add('incorrect');
+            }
+        });
+
+        // Corregir radio buttons
+        const checkRadio = (name, containerId) => {
+            const opciones = document.getElementsByName(name);
+            let respondido = false;
+            const contenedor = document.getElementById(containerId);
+            for (let opcion of opciones) {
+                if (opcion.checked) {
+                    respondido = true;
+                    if (opcion.value === "correcto") {
+                        puntaje++;
+                        contenedor.classList.remove('incorrect');
+                        contenedor.classList.add('correct');
+                    } else {
+                        contenedor.classList.remove('correct');
+                        contenedor.classList.add('incorrect');
+                    }
+                    break;
+                }
+            }
+            if (!respondido) {
+                contenedor.classList.remove('correct');
+                contenedor.classList.add('incorrect');
+            }
+        };
+
+        checkRadio('ubicacion_metales', 'q4_1');
+        checkRadio('ubicacion_nometales', 'q4_2');
+
+        // Mostrar resultado visual al estudiante
+        mostrarMensaje(puntaje, total);
+
+        // Enviar datos a Google Sheets
+        const datosAEnviar = {
+            nombre: nombreAlumno,
+            puntaje: puntaje,
+            total: total
+        };
+
+        fetch(URL_DEL_SCRIPT, {
+            method: 'POST',
+            body: JSON.stringify(datosAEnviar)
+        })
+        .then(response => {
+            btn.innerText = "¡Actividad enviada con éxito!";
+        })
+        .catch(error => {
+            btn.innerText = "Error de conexión. Tus respuestas se corrigieron pero no se guardaron.";
+            btn.disabled = false;
+        });
+    }
+
+    function mostrarMensaje(puntaje, total) {
+        const resultadoDiv = document.getElementById('mensaje-resultado');
+        resultadoDiv.style.display = 'block';
+        
+        if (puntaje === total) {
+            resultadoDiv.innerHTML = `¡Excelente! Respondiste correctamente todas las preguntas (${puntaje}/${total}).`;
+            resultadoDiv.style.backgroundColor = '#d4edda';
+            resultadoDiv.style.color = '#155724';
+            resultadoDiv.style.border = '1px solid #c3e6cb';
+        } else if (puntaje >= total / 2) {
+            resultadoDiv.innerHTML = `¡Muy bien! Lograste ${puntaje} de ${total} respuestas correctas. Revisá los recuadros en rojo para ver dónde te equivocaste.`;
+            resultadoDiv.style.backgroundColor = '#fff3cd';
+            resultadoDiv.style.color = '#856404';
+            resultadoDiv.style.border = '1px solid #ffeeba';
+        } else {
+            resultadoDiv.innerHTML = `Obtuviste ${puntaje} de ${total} respuestas correctas. Te recomiendo repasar las propiedades y ubicación en la tabla periódica y volver a intentarlo.`;
+            resultadoDiv.style.backgroundColor = '#f8d7da';
+            resultadoDiv.style.color = '#721c24';
+            resultadoDiv.style.border = '1px solid #f5c6cb';
+        }
+    }
+</script>
+
+</body>
+</html>
